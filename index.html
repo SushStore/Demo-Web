@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lone Star Roofing Solutions – Texas Residential & Commercial Roofing</title>
+  <meta name="description" content="Emergency roof repair, residential & commercial roofing in Texas. Licensed, insured, 24/7 response. Get your free estimate today." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rust:    { DEFAULT: '#C0392B', dark: '#922B21', light: '#E74C3C' },
+            steel:   { DEFAULT: '#2C3E50', dark: '#1A252F', light: '#34495E' },
+            gold:    { DEFAULT: '#D4A017', light: '#F0C330' },
+            smoke:   { DEFAULT: '#F5F0EB', dark: '#E8DDD3' },
+          },
+          fontFamily: {
+            display: ['Oswald', 'sans-serif'],
+            serif:   ['Source Serif 4', 'serif'],
+            body:    ['Barlow', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: #F5F0EB; color: #1A252F; }
+
+    /* ── Grain overlay ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 999; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+    }
+
+    /* ── Hero diagonal clip ── */
+    .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+
+    /* ── Angled divider ── */
+    .angle-top { clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%); }
+    .angle-both { clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%); }
+
+    /* ── Fade-in animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.36s; }
+    .delay-4 { animation-delay: 0.5s; }
+
+    /* ── Pulse badge ── */
+    @keyframes pulseBadge {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(192,57,43,0.5); }
+      50%       { box-shadow: 0 0 0 10px rgba(192,57,43,0); }
+    }
+    .pulse-badge { animation: pulseBadge 2s infinite; }
+
+    /* ── Star rating ── */
+    .stars::before { content: '★★★★★'; color: #D4A017; }
+
+    /* ── Service card hover ── */
+    .service-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.18); }
+
+    /* ── CTA shimmer ── */
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    .btn-shimmer {
+      background: linear-gradient(90deg, #C0392B 0%, #E74C3C 40%, #f87171 50%, #E74C3C 60%, #C0392B 100%);
+      background-size: 200% auto;
+      animation: shimmer 2.8s linear infinite;
+    }
+
+    /* ── Sticky bar ── */
+    #sticky-bar { transition: transform 0.3s ease; }
+
+    /* ── Input focus ── */
+    input:focus, select:focus { outline: 2px solid #C0392B; outline-offset: 1px; }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- ════════════════════════════════════════
+       STICKY EMERGENCY BAR
+  ════════════════════════════════════════ -->
+  <div id="sticky-bar" class="fixed top-0 left-0 right-0 z-50 bg-rust text-white text-center py-2 px-4 text-sm font-body font-semibold tracking-wide shadow-lg">
+    🚨 24/7 Emergency Roofing — <a href="tel:+15127890000" class="underline font-bold">Call Now: (512) 789-0000</a>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section class="hero-clip relative bg-steel-dark text-white pt-16 pb-28 px-5 min-h-screen flex flex-col justify-center overflow-hidden">
+
+    <!-- Background texture lines -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 48px, rgba(255,255,255,0.6) 48px, rgba(255,255,255,0.6) 50px);"></div>
+
+    <!-- Red accent bar -->
+    <div class="absolute top-16 left-0 w-1.5 h-64 bg-rust"></div>
+
+    <!-- Logo & Brand -->
+    <div class="fade-up flex items-center gap-3 mb-8 pl-5">
+      <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="21,2 40,32 2,32" fill="#C0392B" stroke="#922B21" stroke-width="1.5"/>
+        <rect x="13" y="26" width="16" height="8" fill="#D4A017"/>
+        <rect x="18" y="26" width="6" height="8" fill="#B8860B"/>
+      </svg>
+      <div>
+        <div class="font-display text-xl font-bold tracking-widest uppercase text-white leading-none">Lone Star</div>
+        <div class="font-display text-xs tracking-[0.25em] uppercase text-gold">Roofing Solutions</div>
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <div class="pl-5 pr-2 mb-6 fade-up delay-1">
+      <p class="font-body text-rust-light text-xs font-semibold uppercase tracking-widest mb-2">Texas Licensed & Insured</p>
+      <h1 class="font-display text-4xl font-bold leading-tight uppercase mb-3" style="line-height:1.1">
+        When the Storm Hits,<br/>
+        <span class="text-gold">We're Already<br/>On Your Roof.</span>
+      </h1>
+      <p class="font-serif text-slate-300 text-base font-light leading-relaxed max-w-sm">
+        Emergency repairs, storm damage restoration & long-lasting residential roofing — done right, done fast, backed by a <strong class="text-white font-semibold">10-year workmanship warranty</strong>.
+      </p>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="pl-5 mb-8 flex gap-4 flex-wrap fade-up delay-2">
+      <span class="text-xs bg-white/10 border border-white/20 rounded px-2 py-1 font-body">✔ Licensed &amp; Insured</span>
+      <span class="text-xs bg-white/10 border border-white/20 rounded px-2 py-1 font-body">✔ Free Inspections</span>
+      <span class="text-xs bg-white/10 border border-white/20 rounded px-2 py-1 font-body">✔ Same-Day Response</span>
+    </div>
+
+    <!-- Micro Capture Form -->
+    <div class="mx-5 bg-white rounded-2xl shadow-2xl p-5 fade-up delay-3">
+      <p class="font-display text-steel-dark text-sm uppercase tracking-widest font-bold mb-4 text-center">Get Your Free Estimate</p>
+      <div class="space-y-3">
+        <input
+          type="text" placeholder="Your Full Name"
+          class="w-full rounded-lg border border-gray-200 bg-smoke px-4 py-3 text-sm font-body text-steel-dark placeholder-gray-400"
+        />
+        <input
+          type="tel" placeholder="Phone Number"
+          class="w-full rounded-lg border border-gray-200 bg-smoke px-4 py-3 text-sm font-body text-steel-dark placeholder-gray-400"
+        />
+        <select class="w-full rounded-lg border border-gray-200 bg-smoke px-4 py-3 text-sm font-body text-steel-dark">
+          <option value="" disabled selected>Type of Service Needed</option>
+          <option>Emergency Repair</option>
+          <option>Residential Roofing</option>
+          <option>Commercial Roofing</option>
+          <option>Storm Damage Inspection</option>
+          <option>Roof Replacement</option>
+        </select>
+        <button
+          onclick="alert('Thanks! We\'ll call you within 15 minutes.')"
+          class="btn-shimmer w-full text-white font-display font-bold uppercase tracking-widest text-base rounded-xl py-4 shadow-lg pulse-badge"
+        >
+          🔥 Get a Free Estimate →
+        </button>
+      </div>
+      <p class="text-center text-xs text-gray-400 mt-3 font-body">No commitment. We'll call you in under 15 min.</p>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="fade-up delay-4 text-center mt-8 text-white/40 text-xs font-body tracking-widest animate-bounce">▼ SCROLL</div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       WHY US — STATS STRIP
+  ════════════════════════════════════════ -->
+  <section class="bg-rust py-8 px-5">
+    <div class="grid grid-cols-3 gap-2 text-center text-white">
+      <div>
+        <div class="font-display text-3xl font-bold">15+</div>
+        <div class="font-body text-xs uppercase tracking-wide text-red-100 leading-tight">Years in<br/>Business</div>
+      </div>
+      <div class="border-l border-r border-red-400/50">
+        <div class="font-display text-3xl font-bold">2,400+</div>
+        <div class="font-body text-xs uppercase tracking-wide text-red-100 leading-tight">Roofs<br/>Completed</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl font-bold">4.9★</div>
+        <div class="font-body text-xs uppercase tracking-wide text-red-100 leading-tight">Google<br/>Rating</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════ -->
+  <section class="angle-top bg-smoke py-20 px-5 mt-[-1px]">
+    <div class="text-center mb-10">
+      <p class="font-body text-rust text-xs uppercase tracking-widest font-semibold mb-1">What We Do</p>
+      <h2 class="font-display text-steel-dark text-3xl font-bold uppercase">Our Services</h2>
+      <div class="w-12 h-1 bg-rust mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 max-w-lg mx-auto">
+
+      <!-- Card 1 -->
+      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md flex">
+        <div class="w-2 bg-rust flex-shrink-0"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-smoke flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-rust" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </div>
+            <h3 class="font-display text-steel-dark font-bold text-lg uppercase">Residential Roofing</h3>
+          </div>
+          <p class="font-body text-gray-500 text-sm leading-relaxed">Full installations, re-roofing & repairs for single-family homes. We work with asphalt shingles, metal, tile & flat roofs — all backed by manufacturer warranty.</p>
+          <div class="mt-3 flex flex-wrap gap-1">
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">Shingles</span>
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">Metal Roof</span>
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">Tile</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md flex">
+        <div class="w-2 bg-steel flex-shrink-0"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-smoke flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-steel" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+            </div>
+            <h3 class="font-display text-steel-dark font-bold text-lg uppercase">Commercial Roofing</h3>
+          </div>
+          <p class="font-body text-gray-500 text-sm leading-relaxed">Flat, TPO, EPDM & built-up roofing systems for warehouses, retail centers & office buildings. Minimal disruption to your operations.</p>
+          <div class="mt-3 flex flex-wrap gap-1">
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">TPO</span>
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">EPDM</span>
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">Flat Roof</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md flex">
+        <div class="w-2 bg-rust flex-shrink-0"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-rust" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.72L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5V2.05z"/></svg>
+            </div>
+            <h3 class="font-display text-steel-dark font-bold text-lg uppercase">Storm Damage Repair</h3>
+          </div>
+          <p class="font-body text-gray-500 text-sm leading-relaxed">Hail, wind & water damage? We deploy within hours, tarp & secure your roof, and work directly with your insurance adjuster for a hassle-free claim.</p>
+          <div class="mt-3 flex flex-wrap gap-1">
+            <span class="text-xs bg-red-50 text-rust rounded-full px-2 py-0.5 font-body font-semibold">⚡ 24/7 Response</span>
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">Insurance Help</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md flex">
+        <div class="w-2 bg-gold flex-shrink-0"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </div>
+            <h3 class="font-display text-steel-dark font-bold text-lg uppercase">Roof Inspection</h3>
+          </div>
+          <p class="font-body text-gray-500 text-sm leading-relaxed">Comprehensive roof health check with drone imaging & written report. Catch small problems before they become expensive disasters. Free for homes over 1,500 sq ft.</p>
+          <div class="mt-3 flex flex-wrap gap-1">
+            <span class="text-xs bg-amber-50 text-yellow-700 rounded-full px-2 py-0.5 font-body font-semibold">🎁 Free Inspection</span>
+            <span class="text-xs bg-smoke text-steel rounded-full px-2 py-0.5 font-body">Drone Imaging</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PROCESS STRIP
+  ════════════════════════════════════════ -->
+  <section class="bg-steel-dark py-10 px-5 text-white">
+    <p class="font-body text-rust-light text-xs uppercase tracking-widest font-semibold text-center mb-6">How It Works</p>
+    <div class="flex justify-between items-start max-w-sm mx-auto gap-2">
+      <div class="text-center flex-1">
+        <div class="w-10 h-10 bg-rust rounded-full flex items-center justify-center mx-auto mb-2 font-display font-bold text-lg">1</div>
+        <p class="font-body text-xs text-slate-300 leading-snug">Call or Text Us</p>
+      </div>
+      <div class="w-8 h-px bg-rust/40 mt-5"></div>
+      <div class="text-center flex-1">
+        <div class="w-10 h-10 bg-rust rounded-full flex items-center justify-center mx-auto mb-2 font-display font-bold text-lg">2</div>
+        <p class="font-body text-xs text-slate-300 leading-snug">Free Inspection + Quote</p>
+      </div>
+      <div class="w-8 h-px bg-rust/40 mt-5"></div>
+      <div class="text-center flex-1">
+        <div class="w-10 h-10 bg-rust rounded-full flex items-center justify-center mx-auto mb-2 font-display font-bold text-lg">3</div>
+        <p class="font-body text-xs text-slate-300 leading-snug">We Fix It Right</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════ -->
+  <section class="angle-both bg-smoke py-20 px-5">
+    <div class="text-center mb-10">
+      <p class="font-body text-rust text-xs uppercase tracking-widest font-semibold mb-1">Happy Homeowners</p>
+      <h2 class="font-display text-steel-dark text-3xl font-bold uppercase">What Clients Say</h2>
+      <div class="w-12 h-1 bg-rust mx-auto mt-3"></div>
+    </div>
+
+    <div class="space-y-5 max-w-lg mx-auto">
+
+      <!-- Review 1 -->
+      <div class="bg-white rounded-2xl p-5 shadow-md border-l-4 border-rust relative">
+        <div class="stars text-lg mb-2"></div>
+        <p class="font-serif text-steel-dark text-base italic leading-relaxed mb-4">"Highly professional from start to finish. They came out within two hours of my call after a hailstorm. My insurance claim was handled seamlessly — I didn't have to do a thing. Roof looks brand new."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-steel-dark text-white flex items-center justify-center font-display font-bold text-sm">JM</div>
+          <div>
+            <div class="font-body font-semibold text-sm text-steel-dark">James M.</div>
+            <div class="font-body text-xs text-gray-400">Cedar Park, TX • Verified Google Review</div>
+          </div>
+        </div>
+        <div class="absolute top-4 right-4 text-5xl text-smoke-dark font-serif leading-none select-none">"</div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-2xl p-5 shadow-md border-l-4 border-gold relative">
+        <div class="stars text-lg mb-2"></div>
+        <p class="font-serif text-steel-dark text-base italic leading-relaxed mb-4">"Fixed my leak in hours — on a Sunday! I had water coming through my bedroom ceiling and called at 7 AM. By noon the problem was gone. Fair price, clean crew, zero mess left behind."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-rust text-white flex items-center justify-center font-display font-bold text-sm">SR</div>
+          <div>
+            <div class="font-body font-semibold text-sm text-steel-dark">Sandra R.</div>
+            <div class="font-body text-xs text-gray-400">Round Rock, TX • Verified Google Review</div>
+          </div>
+        </div>
+        <div class="absolute top-4 right-4 text-5xl text-smoke-dark font-serif leading-none select-none">"</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-2xl p-5 shadow-md border-l-4 border-steel relative">
+        <div class="stars text-lg mb-2"></div>
+        <p class="font-serif text-steel-dark text-base italic leading-relaxed mb-4">"Used Lone Star for a full roof replacement on my commercial building. They finished ahead of schedule and under budget. The crew was respectful, professional, and the work is impeccable. Already referred them to two other business owners."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold text-white flex items-center justify-center font-display font-bold text-sm">DL</div>
+          <div>
+            <div class="font-body font-semibold text-sm text-steel-dark">David L.</div>
+            <div class="font-body text-xs text-gray-400">Austin, TX • Verified HomeAdvisor Review</div>
+          </div>
+        </div>
+        <div class="absolute top-4 right-4 text-5xl text-smoke-dark font-serif leading-none select-none">"</div>
+      </div>
+
+    </div>
+
+    <!-- Rating summary -->
+    <div class="mt-8 max-w-lg mx-auto bg-steel-dark text-white rounded-2xl p-4 flex items-center gap-4 shadow-xl">
+      <div class="text-center px-3 border-r border-white/20">
+        <div class="font-display text-4xl font-bold text-gold">4.9</div>
+        <div class="stars text-sm"></div>
+        <div class="font-body text-xs text-slate-300 mt-0.5">340 reviews</div>
+      </div>
+      <div>
+        <p class="font-body text-sm text-slate-200 leading-relaxed">Ranked <strong class="text-white">#1 Roofing Contractor</strong> in Travis County for 3 consecutive years by HomeAdvisor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       URGENCY CTA BANNER
+  ════════════════════════════════════════ -->
+  <section class="bg-rust px-5 py-10 text-white text-center">
+    <div class="max-w-sm mx-auto">
+      <p class="font-display text-2xl font-bold uppercase leading-tight mb-2">Roof Leaking <span class="text-gold">Right Now?</span></p>
+      <p class="font-body text-red-100 text-sm mb-5 leading-relaxed">Don't wait. Water damage spreads fast and costs you thousands more every hour. We deploy in under 60 minutes.</p>
+      <a href="sms:+15127890000?body=EMERGENCY - I need roof repair ASAP"
+         class="block bg-white text-rust font-display font-bold uppercase tracking-widest text-base rounded-xl py-4 shadow-2xl pulse-badge mb-3">
+        🆘 Emergency Repair — Tap to Text Us
+      </a>
+      <a href="tel:+15127890000"
+         class="block border-2 border-white/60 text-white font-body font-semibold text-sm rounded-xl py-3">
+        📞 Or Call: (512) 789-0000
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER / CONTACT
+  ════════════════════════════════════════ -->
+  <footer class="bg-steel-dark text-white px-5 pt-10 pb-20">
+    <div class="max-w-sm mx-auto">
+
+      <!-- Brand -->
+      <div class="flex items-center gap-3 mb-6">
+        <svg width="32" height="32" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="21,2 40,32 2,32" fill="#C0392B"/>
+          <rect x="13" y="26" width="16" height="8" fill="#D4A017"/>
+          <rect x="18" y="26" width="6" height="8" fill="#B8860B"/>
+        </svg>
+        <div>
+          <div class="font-display text-base font-bold tracking-widest uppercase text-white leading-none">Lone Star Roofing Solutions</div>
+          <div class="font-body text-xs text-slate-400">Licensed · Insured · Locally Owned</div>
+        </div>
+      </div>
+
+      <!-- Contact info -->
+      <div class="space-y-3 mb-8 font-body text-sm text-slate-300">
+        <div class="flex items-center gap-2"><span class="text-rust">📞</span> <a href="tel:+15127890000" class="hover:text-white">(512) 789-0000</a></div>
+        <div class="flex items-center gap-2"><span class="text-rust">📧</span> <a href="mailto:info@lonestarroofing.com" class="hover:text-white">info@lonestarroofing.com</a></div>
+        <div class="flex items-center gap-2"><span class="text-rust">📍</span> <span>Austin, TX — Serving Travis, Williamson & Hays Counties</span></div>
+        <div class="flex items-center gap-2"><span class="text-rust">⏰</span> <span>Mon–Fri 7AM–7PM · Emergency 24/7</span></div>
+      </div>
+
+      <!-- Social + CTA buttons -->
+      <div class="grid grid-cols-2 gap-3 mb-8">
+        <a href="https://instagram.com" target="_blank"
+           class="bg-gradient-to-tr from-purple-600 to-pink-500 text-white rounded-xl py-3 text-center font-display text-xs font-bold uppercase tracking-wider">
+          📸 Instagram
+        </a>
+        <a href="sms:+15127890000?body=Hi! I need a roofing estimate"
+           class="bg-green-600 text-white rounded-xl py-3 text-center font-display text-xs font-bold uppercase tracking-wider">
+          💬 Text Us
+        </a>
+      </div>
+
+      <!-- Service areas -->
+      <div class="border-t border-white/10 pt-6 mb-6">
+        <p class="font-body text-xs uppercase tracking-widest text-slate-400 mb-2">Service Areas</p>
+        <p class="font-body text-xs text-slate-400 leading-relaxed">Austin · Cedar Park · Round Rock · Georgetown · Pflugerville · Buda · Kyle · San Marcos · Bastrop</p>
+      </div>
+
+      <!-- Legal -->
+      <p class="font-body text-xs text-slate-600 text-center leading-relaxed">
+        © 2025 Lone Star Roofing Solutions LLC. Texas Contractor License #TX-RF-094821.<br/>
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════
+       FLOATING CALL BUTTON
+  ════════════════════════════════════════ -->
+  <div class="fixed bottom-5 right-4 z-50">
+    <a href="tel:+15127890000"
+       class="btn-shimmer flex items-center gap-2 text-white font-display font-bold uppercase tracking-wide text-sm rounded-full px-5 py-3.5 shadow-2xl pulse-badge">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now
+    </a>
+  </div>
+
+  <script>
+    // Hide/show sticky bar on scroll
+    let lastY = 0;
+    const bar = document.getElementById('sticky-bar');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      bar.style.transform = y > lastY && y > 80 ? 'translateY(-100%)' : 'translateY(0)';
+      lastY = y;
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
